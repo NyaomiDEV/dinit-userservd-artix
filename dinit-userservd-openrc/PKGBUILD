@@ -1,0 +1,14 @@
+pkgname=dinit-userservd-openrc
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="user dinit instance spawner + manager daemon. (OpenRC service script)"
+arch=('any')
+url="https://github.com/NyaomiDEV/dinit-userservd-artix/"
+license=('BSD')
+depends=('openrc' 'dinit-userservd')
+source=("dinit-userservd")
+sha256sums=('7af27e4982976c781e9967a21cf2eda277d4bc2eb80d4fdbec7095dd0736384b')
+
+package() {
+	install -Dm755 "dinit-userservd" "$pkgdir/etc/init.d/dinit-userservd"
+}

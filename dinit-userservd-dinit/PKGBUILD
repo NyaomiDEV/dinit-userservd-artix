@@ -1,0 +1,14 @@
+pkgname=dinit-userservd-dinit
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="user dinit instance spawner + manager daemon. (dinit service script)"
+arch=('any')
+url="https://github.com/chimera-linux/dinit-userservd/"
+license=('BSD')
+depends=('dinit' 'dinit-userservd')
+source=("git+https://github.com/chimera-linux/dinit-userservd")
+sha256sums=('SKIP')
+
+package() {
+	install -Dm644 "$pkgname/dinit-userservd" "$pkgdir/etc/dinit.d/dinit-userservd"
+}

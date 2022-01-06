@@ -1,0 +1,9 @@
+post_install() {
+	cat <<- "END"
+	In order for dinit-userservd to work you have to append the following to /etc/pam.d/login:
+
+	    session optional pam_dinit_userservd.so
+
+	Please refer to the repository's README file for more info.
+	END
+}

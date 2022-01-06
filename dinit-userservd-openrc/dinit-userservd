@@ -1,0 +1,12 @@
+#!/usr/bin/openrc-run
+# Copyright 2021 Artix Linux
+# Distributed under the terms of the GNU General Public License v2
+
+supervisor=supervise-daemon
+supervise_daemon_args="-1 /var/log/dinit-userservd.log -2 /var/log/dinit-userservd.err.log"
+command="/usr/bin/dinit-userservd"
+
+depend() {
+    need elogind;
+}
+ 
