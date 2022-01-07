@@ -21,9 +21,9 @@ build() {
 }
 
 package() {
-    cd "$pkgname"
-    meson install -C build --destdir "$pkgdir"
-    
-    # Remove dinit.d script in /etc/dinit.d/dinit-userservd
-    rm -r "$pkgdir/etc"
+	cd "$pkgname"
+	meson install -C build --destdir "$pkgdir"
+
+	# Remove dinit.d script in /etc/dinit.d/dinit-userservd
+	rm -r "$pkgdir/etc"
 }
